@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
-const uri = "mongodb://localhost/users";
-console.log(uri);
-mongoose.connect(uri, {
+const url = "mongodb://localhost/users";
+const { MongoClient } = require("mongodb");
+
+mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -14,3 +15,19 @@ db.once("open", () => {
 });
 
 module.exports = db;
+
+// //my db url
+// const url = "mongodb+srv://smunawer:smunawer@skincancerdata.vymhw.gcp.mongodb.net/skinCancerData?retryWrites=true&w=majority"
+// const client = new MongoClient(url);
+// async function run() {
+//     try {
+//         await client.connect();
+//         console.log("Connected correctly to server");
+//     } catch (err) {
+//         console.log(err.stack);
+//     }
+//     finally {
+//         await client.close();
+//     }
+// }
+// run().catch(console.dir);
