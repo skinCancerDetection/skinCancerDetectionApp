@@ -1,0 +1,45 @@
+[
+    {
+        "_id" : "154566fgsdg",
+        "firstName": "mohamed",
+        "lastName": "salahat",
+        "email": "mosalah@gmail.com",
+        "password": "123568ggikf",
+        "phoneNumber": "0796668392",
+        "profileImage": "",
+        "clinicLocation": "tla'a al ali",
+        "workingFrom": "8:00 am",
+        "workingTo": "6:00 pm",
+        "certificate": "",
+        "notes": ""
+    },
+    {
+        "_id" : "15uyuig4566fgsdg",
+        "firstName": "saleh",
+        "lastName": "hamdan",
+        "email": "salehhamdan@gmail.com",
+        "password": "123568ggikf",
+        "phoneNumber": "0796668376",
+        "profileImage": "",
+        "clinicLocation": "zarqa",
+        "workingFrom": "8:00 am",
+        "workingTo": "6:00 pm",
+        "certificate": "",
+        "notes": ""
+    },
+    {
+        "_id" : "15u66784vh566fgsdg",
+        "firstName": "sumya",
+        "lastName": "mohaed",
+        "email": "sumyamohamed@gmail.com",
+        "password": "123568ggikf",
+        "phoneNumber": "0796543376",
+        "profileImage": "",
+        "clinicLocation": "jarsh",
+        "workingFrom": "8:00 am",
+        "workingTo": "6:00 pm",
+        "certificate": "",
+        "notes": ""
+      }
+    
+]

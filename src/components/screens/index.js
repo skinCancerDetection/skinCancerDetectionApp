@@ -1,4 +1,5 @@
 import React from 'react';
+import {AppRegistry} from "react-native"
 import Screen from './screen';
 
 export const HomeScreen =({navigation}) => <Screen navigation={navigation} name='Home'/>

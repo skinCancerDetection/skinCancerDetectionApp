@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const url = "mongodb://localhost/skinCancerUsers";
+const url = "mongodb+srv://yasmeen:1996292yaso@cluster0-l9jkx.mongodb.net/skinCancer?retryWrites=true&w=majority";
 const { MongoClient } = require("mongodb");
 
 mongoose.connect(url, {

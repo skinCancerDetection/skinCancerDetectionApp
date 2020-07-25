@@ -24,11 +24,12 @@ import PatientUpdate from "./src/components/screens/patientUpdate";
 import Login from "./src/components/screens/login";
 import PatientApmnt from "./src/components/screens/patientApmnt";
 import PatientRep from "./src/components/screens/patientRep";
+import AboutUs from "./src/components/screens/aboutUs";
 
 const DrawerNavigator = createDrawerNavigator(
   {
     HomeScreen: {
-      screen: Signup,
+      screen: AboutUs,
       navigationOptions: ({ navigation }) => ({
         title: "Home",
         drawerIcon: ({ tintColor }) => (

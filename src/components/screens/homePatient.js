@@ -5,7 +5,11 @@ import { MaterialIcons } from "@expo/vector-icons";
 import * as Permissions from "expo-permissions";
 import * as ImagePicker from "expo-image-picker";
 import Header from "../common/header";
+import { NavigationActions } from "react-navigation";
 export default class HomePatient extends React.Component {
+  constructor(props){
+    super()
+  }
   state = {
     image: null,
   };
@@ -54,9 +58,10 @@ export default class HomePatient extends React.Component {
     );
   };
   render() {
+    
     return (
       <View>
-        <Header />
+        <Header drawer={this.props} />
         <View style={styles.container}>
           <Text p style={styles.description}>
             Upload or capture Image for your ubnormal skin ...

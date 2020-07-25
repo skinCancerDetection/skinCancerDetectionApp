@@ -33,7 +33,7 @@ class Signup extends React.Component {
   }
 
   submit = () => {
-    var url = 'http://192.168.1.83:8080/api/user/patient/signup';
+    var url = 'http://192.168.1.149:8080/api/user/patient/signup';
     axios.post(url, this.state)
       .then(function (response) {
         console.log(response);

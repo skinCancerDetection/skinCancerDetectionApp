@@ -9,18 +9,14 @@ import {
 } from "react-native";
 //import AsyncStorage from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
-
 // galio component
 import { Block, Button, Input, NavBar, Text } from "galio-framework";
-
 import theme from "../../theme";
 import { Image } from "react-native";
 import axios from "axios";
 import { useState } from "react";
 import { set } from "mongoose";
-
 const { height, width } = Dimensions.get("window");
-
 function Login() {
     const state = {
         email: "",
@@ -29,25 +25,19 @@ function Login() {
     const handleEmailChange = (e) => {
         state.email = e.nativeEvent.text;
     };
-
     const [password, setPassword] = React.useState("");
-
     function handlePasswordChange(e) {
         state.password = e.nativeEvent.text;
     }
-
     const onSubmit = (e) => {
         const user = {
             email: state.email,
             password: state.password,
         };
-
         var id;
-
         // AsyncStorage.setItem("access_token", JSON.stringify(id));
-
         axios
-            .post("http://192.168.1.83:8080/login", user)
+            .post("http://192.168.1.75:8080/login", user)
             .then((res) => {
                 console.log(res.data.patient._id);
                 id = res.data.patient._id;
@@ -65,7 +55,6 @@ function Login() {
         //  console.log("hi");
         //  console.log(id);
     };
-
     return (
         <Block safe flex style={{ backgroundColor: theme.COLORS.WHITE }}>
             <KeyboardAvoidingView style={styles.container} behavior="height" enabled>
@@ -132,7 +121,6 @@ function Login() {
         </Block>
     );
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -149,5 +137,4 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
 });
-
 export default Login;

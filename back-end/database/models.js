@@ -44,7 +44,7 @@ let appointmentSchema = mongoose.Schema({
 let Patient = mongoose.model("Patient", patientSchema, "patients");
 let Doctor = mongoose.model("Doctor", doctorSchema, "doctors");
 let Appointment = mongoose.model("Appointment", appointmentSchema, "appoints");
-
+ 
 module.exports.Patient = Patient;
 module.exports.Doctor = Doctor;
 module.exports.Appointment = Appointment;
