@@ -31,7 +31,6 @@ import PatientUpdate from "./src/components/screens/patientUpdate";
 import Login from "./src/components/screens/login";
 import ViewDoctor from "./src/components/screens/viewDoctor";
 import LoginContainerPatient from "./src/components/screens/loginContainerPatient";
-import Appointments from "./src/components/screens/patientApmnt";
 // DrawerNavigatorExample
 
 const DrawerNavigatorExample = createDrawerNavigator(
@@ -72,15 +71,13 @@ const DrawerNavigatorExample = createDrawerNavigator(
         ),
       }),
     },
-    AppointmentsScreen: {
-      screen: Appointments,
-      navigationOptions: {
-        title: "Appointments",
-        drawerIcon: ({ tintColor }) => (
-          <MaterialIcons name="date-range" size={16} color={tintColor} />
-        ),
-      },
-    },
+    // AppointmentsScreen :{
+    //   screen:AppointmentsScreen,
+    //   navigationOptions : {
+    //     title :'Appointments',
+    //     drawerIcon :({tintColor}) =><MaterialIcons name="date-range" size={16} color={tintColor} />
+    //   }
+    // },
     // ReportScreen :{
     //   screen:ReportScreen,
     //   navigationOptions : {

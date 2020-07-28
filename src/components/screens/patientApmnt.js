@@ -16,17 +16,18 @@ const { width } = Dimensions.get("screen");
 class Appointments extends React.Component {
   state = {
     userId: "",
-    doctorId: "",
     appoints: [],
     doctorName: [],
   };
   async componentDidMount() {
     var pointer = this;
     try {
-      const value = "5f16ac53082a493570770a1d";
+      //const value = "5f16ac53082a493570770a1d";
+      const value = await AsyncStorage.getItem("access_token");
       console.log("hi from appoints");
       await pointer.setState({ userId: value });
       console.log(pointer.state);
+
       await axios
         .post("http://192.168.1.75:8080/patient/appoints", {
           params: {
@@ -37,22 +38,19 @@ class Appointments extends React.Component {
           console.log("hi");
           console.log(res.data);
           await pointer.setState({ appoints: res.data });
-          await pointer.setState({ doctorId: res.data[0].doctorId });
-          console.log(JSON.stringify(res.data[0].doctorId));
         })
         .then(async () => {
-          await axios
-            .post("http://192.168.1.75:8080/patient/appoints", {
-              docparams: {
-                docvalue: { docId: pointer.state.doctorId },
-              },
-            })
-            .then(async (res) => {
-              console.log("hi back with doc");
-              console.log(res.data);
-              await pointer.setState({ doctorName: res.data });
-              // console.log(JSON.stringify(res.data[0].doctorId));
-            });
+          await pointer.state.appoints.map(async (element) => {
+            await axios
+              .post("http://192.168.1.75:8080/api/users/doctor", {
+                id: element.doctorId[0],
+              })
+              .then(async (res) => {
+                let array = [];
+                array.push(res.data.firstName + " " + res.data.lastName);
+                await pointer.setState({ doctorName: array });
+              });
+          });
         });
     } catch (error) {
       console.log(error);
@@ -60,6 +58,8 @@ class Appointments extends React.Component {
   }
   render() {
     const { navigation } = this.props;
+    const doctors = this.state.doctorName;
+    console.log(doctors[0]);
     return (
       <Block safe flex style={{ backgroundColor: theme.COLORS.WHITE }}>
         <NavBar
@@ -80,17 +80,24 @@ class Appointments extends React.Component {
         />
         <ScrollView contentContainerStyle={styles.cards}>
           <Block flex space="between">
-            {this.state.appoints.map((appoint, id) => (
+            {this.state.appoints.map((appoint, i) => (
               <Card
-                key={id}
+                key={i}
                 flex
                 borderless
                 shadowColor={theme.COLORS.BLACK}
                 style={styles.card}
-                doctor={appoint.doctorId}
-                status={appoint.status}
-                date={appoint.date}
-                time={appoint.time}
+                title={doctors[0]}
+                caption={
+                  "Status: " +
+                  appoint.status +
+                  "\n" +
+                  "Date:" +
+                  appoint.date +
+                  "\n" +
+                  "Time: " +
+                  appoint.time
+                }
               ></Card>
             ))}
           </Block>
