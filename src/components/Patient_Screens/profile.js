@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
   },
   avatarContainer: {
     position: "relative",
-    marginTop: -150,
+    marginTop: -130,
     paddingBottom:-10,
   },
   profileCard: {

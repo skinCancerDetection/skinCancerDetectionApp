@@ -7,6 +7,7 @@ import {
   Platform,
   View,
   ImageBackground,
+  ScrollView
 } from "react-native";
 import { Block, Button, Input, NavBar, Text } from "galio-framework";
 
@@ -82,6 +83,7 @@ function Login(props) {
   };
 
   return (
+    <ScrollView>
     <Block safe flex style={{ backgroundColor: theme.COLORS.WHITE }}>
     <ImageBackground source={require('../../../assets/register-bg.png')} style={{width: width, height: 1500}}>
       <KeyboardAvoidingView style={styles.container} behavior="height" enabled>
@@ -159,6 +161,7 @@ function Login(props) {
       </KeyboardAvoidingView>
       </ImageBackground>
     </Block>
+    </ScrollView>
   );
 }
 

@@ -6,7 +6,8 @@ import {
   StyleSheet,
   Platform,
   View,
-  ImageBackground
+  ImageBackground,
+  ScrollView
 } from "react-native";
 import { Block, Button, Input, NavBar, Text } from "galio-framework";
 import {  MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
@@ -68,6 +69,7 @@ function LoginDr(props) {
   };
 
   return (
+    <ScrollView>
     <Block safe flex style={{ backgroundColor: theme.COLORS.WHITE }}>
     <ImageBackground 
     source={require('../../../assets/register-bg.png')}
@@ -149,6 +151,7 @@ function LoginDr(props) {
       </KeyboardAvoidingView>
       </ImageBackground>
     </Block>
+    </ScrollView>
   );
 }
 

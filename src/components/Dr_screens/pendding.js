@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
   iconStyleCircle: {
     color:"#fff",
     alignItems: "center",
-    right: 70,
+    right: 20,
     bottom :10
   },
 });

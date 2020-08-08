@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   social: {
     width: 260,
     height: 600 ,
-    marginLeft:45
+    marginLeft:75
     
   },
 

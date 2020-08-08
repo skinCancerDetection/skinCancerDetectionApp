@@ -28,18 +28,21 @@ import AboutUs from "../Patient_Screens/aboutUs";
 import Help from "../Patient_Screens/help";
 import Report from "../Patient_Screens/patientReport";
 import Appointments from "../Patient_Screens/patientApmnt";
+import theme from '../../theme'
 const DrwerNavigator = createDrawerNavigator();
 const Stack = createStackNavigator();
 function Drwer(props) {
   return (
     <NavigationContainer>
+    
       <DrwerNavigator.Navigator>
+     
         <DrwerNavigator.Screen
           name="Home"
           component={HomePatient}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <Feather name="home" size={16} color={tintColor} />
+              <Feather name="home" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
@@ -48,7 +51,7 @@ function Drwer(props) {
           component={ProfileContainer}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <Feather name="user" size={16} color={tintColor} />
+              <Feather name="user" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
@@ -57,7 +60,7 @@ function Drwer(props) {
           component={ViewDoctor}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <Fontisto name="doctor" size={16} color={tintColor} />
+              <Fontisto name="doctor" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
@@ -66,7 +69,7 @@ function Drwer(props) {
           component={Appointments}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <MaterialIcons name="date-range" size={16} color={tintColor} />
+              <MaterialIcons name="date-range" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
@@ -75,7 +78,7 @@ function Drwer(props) {
           component={Report}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <MaterialIcons name="report" size={16} color={tintColor} />
+              <MaterialIcons name="report" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
@@ -84,7 +87,7 @@ function Drwer(props) {
           component={Help}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <MaterialIcons name="help" size={16} color={tintColor} />
+              <MaterialIcons name="help" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
@@ -93,7 +96,7 @@ function Drwer(props) {
           component={AboutUs}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <MaterialIcons name="info" size={16} color={tintColor} />
+              <MaterialIcons name="info" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
@@ -102,7 +105,7 @@ function Drwer(props) {
           component={Logout}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <MaterialIcons name="exit-to-app" size={16} color={tintColor} />
+              <MaterialIcons name="exit-to-app" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />

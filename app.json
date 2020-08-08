@@ -11,15 +11,21 @@
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
+    "android": {
+      "package": "com.skinCancerDetiction.skinCancerDetiction",
+      "versionCode": 1
+    },
+    "ios": {
+      "bundleIdentifier": "com.skinCancerDetiction.skinCancerDetiction",
+      "buildNumber": "1.0.0"
+    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
+    
     "web": {
       "favicon": "./assets/favicon.png"
     }

@@ -19,7 +19,7 @@ import {
 } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import AsyncStorage from "@react-native-community/async-storage";
-
+import theme from '../../theme'
 
 import AboutUs from "../Patient_Screens/aboutUs";
 
@@ -39,7 +39,7 @@ function DrwerDoctor(props) {
           component={DoctorAppointments}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <MaterialIcons name="date-range" size={16} color={tintColor} />
+              <MaterialIcons name="date-range" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
@@ -48,7 +48,7 @@ function DrwerDoctor(props) {
           component={DoctorPendingApp}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <Feather name="home" size={16} color={tintColor} />
+              <Feather name="home" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
@@ -57,7 +57,7 @@ function DrwerDoctor(props) {
           component={ProfileRout}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <Feather name="user" size={16} color={tintColor} />
+              <Feather name="user" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
@@ -69,7 +69,7 @@ function DrwerDoctor(props) {
           component={HelpDr}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <MaterialIcons name="help" size={16} color={tintColor} />
+              <MaterialIcons name="help" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
@@ -78,7 +78,7 @@ function DrwerDoctor(props) {
           component={AboutUs}
           options={{
             drawerIcon: ({ tintColor }) => (
-              <MaterialIcons name="info" size={16} color={tintColor} />
+              <MaterialIcons name="info" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
@@ -88,7 +88,7 @@ function DrwerDoctor(props) {
           
           options={{
             drawerIcon: ({ tintColor }) => (
-              <MaterialIcons name="exit-to-app" size={16} color={tintColor} />
+              <MaterialIcons name="exit-to-app" size={16} color={theme.COLORS.PRIMARY} />
             ),
           }}
         />
