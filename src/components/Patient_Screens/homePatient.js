@@ -5,10 +5,11 @@ import { MaterialIcons } from "@expo/vector-icons";
 import * as Permissions from "expo-permissions";
 import * as ImagePicker from "expo-image-picker";
 import Header from "../common/header";
+import axios from "axios";
 import { NavigationActions } from "@react-navigation/native";
 export default class HomePatient extends React.Component {
-  constructor(props){
-    super()
+  constructor(props) {
+    super();
   }
   state = {
     image: null,
@@ -58,13 +59,28 @@ export default class HomePatient extends React.Component {
       { cancelable: false }
     );
   };
+  predict = () => {
+    axios
+      .get("http://8deaf84a24c4.ngrok.io/image")
+      .then((response) => {
+        Alert.alert(
+          "Benign keratosis-like lesions",
+          "A seborrheic keratosis is a common noncancerous skin growth. Seborrheic keratoses are usually brown, black or light tan The growths look waxy,scaly and slightly raised. They usually appear on the head, neck, chest or back.",
+          [{ text: "Ok" }, { text: "Cancel", style: "cancel" }],
+          { cancelable: false }
+        );
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   render() {
-    
     return (
       <View>
         <Header drawer={this.props} title={"Home"} />
         <View style={styles.container}>
-          <Text p style={styles.description} color = {"#484a49"}>
+          <Text p style={styles.description} color={"#484a49"}>
             Upload or capture Image for your ubnormal skin ...
           </Text>
 
@@ -73,16 +89,16 @@ export default class HomePatient extends React.Component {
         <MaterialIcons
           name="photo-camera"
           size={45}
-          color= '#5E72E4'
+          color="#5E72E4"
           style={styles.camera}
           onPress={this.createTwoButtonAlert}
         />
         <MaterialIcons
           name="search"
           size={45}
-          color='#5E72E4'
+          color="#5E72E4"
           style={styles.predict}
-          
+          onPress={this.predict}
         />
       </View>
     );
@@ -100,7 +116,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
 
     borderWidth: 5,
-    borderColor:'#5E72E4',
+    borderColor: "#5E72E4",
   },
 
   container: {
